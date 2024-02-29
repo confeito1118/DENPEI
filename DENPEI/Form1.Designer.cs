@@ -36,53 +36,63 @@
             label5 = new Label();
             menuStrip1 = new MenuStrip();
             ファイルFToolStripMenuItem = new ToolStripMenuItem();
-            閉じるWToolStripMenuItem = new ToolStripMenuItem();
+            closeWToolStripMenuItem = new ToolStripMenuItem();
             checkCToolStripMenuItem = new ToolStripMenuItem();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            label9 = new Label();
+            label10 = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(64, 84);
+            label1.Font = new Font("MS UI Gothic", 13.8F);
+            label1.Location = new Point(253, 76);
             label1.Name = "label1";
-            label1.Size = new Size(133, 20);
+            label1.Size = new Size(200, 23);
             label1.TabIndex = 1;
             label1.Text = "しばらくお待ちください";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(64, 117);
+            label2.Font = new Font("MS UI Gothic", 13.8F);
+            label2.Location = new Point(253, 99);
             label2.Name = "label2";
-            label2.Size = new Size(133, 20);
+            label2.Size = new Size(200, 23);
             label2.TabIndex = 2;
             label2.Text = "しばらくお待ちください";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(64, 149);
+            label3.Font = new Font("MS UI Gothic", 13.8F);
+            label3.Location = new Point(253, 122);
             label3.Name = "label3";
-            label3.Size = new Size(133, 20);
+            label3.Size = new Size(200, 23);
             label3.TabIndex = 3;
             label3.Text = "しばらくお待ちください";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(64, 182);
+            label4.Font = new Font("MS UI Gothic", 13.8F);
+            label4.Location = new Point(253, 145);
             label4.Name = "label4";
-            label4.Size = new Size(133, 20);
+            label4.Size = new Size(200, 23);
             label4.TabIndex = 4;
             label4.Text = "しばらくお待ちください";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(64, 214);
+            label5.Font = new Font("MS UI Gothic", 13.8F);
+            label5.Location = new Point(253, 168);
             label5.Name = "label5";
-            label5.Size = new Size(133, 20);
+            label5.Size = new Size(200, 23);
             label5.TabIndex = 5;
             label5.Text = "しばらくお待ちください";
             // 
@@ -92,22 +102,23 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { ファイルFToolStripMenuItem, checkCToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(697, 28);
+            menuStrip1.Size = new Size(796, 28);
             menuStrip1.TabIndex = 6;
             menuStrip1.Text = "menuStrip1";
             // 
             // ファイルFToolStripMenuItem
             // 
-            ファイルFToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { 閉じるWToolStripMenuItem });
+            ファイルFToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { closeWToolStripMenuItem });
             ファイルFToolStripMenuItem.Name = "ファイルFToolStripMenuItem";
             ファイルFToolStripMenuItem.Size = new Size(82, 24);
             ファイルFToolStripMenuItem.Text = "ファイル(&F)";
             // 
-            // 閉じるWToolStripMenuItem
+            // closeWToolStripMenuItem
             // 
-            閉じるWToolStripMenuItem.Name = "閉じるWToolStripMenuItem";
-            閉じるWToolStripMenuItem.Size = new Size(153, 26);
-            閉じるWToolStripMenuItem.Text = "閉じる(&W)";
+            closeWToolStripMenuItem.Name = "closeWToolStripMenuItem";
+            closeWToolStripMenuItem.Size = new Size(224, 26);
+            closeWToolStripMenuItem.Text = "閉じる(&W)";
+            closeWToolStripMenuItem.Click += closeWToolStripMenuItem_Click;
             // 
             // checkCToolStripMenuItem
             // 
@@ -116,11 +127,66 @@
             checkCToolStripMenuItem.Text = "チェック(&C)";
             checkCToolStripMenuItem.Click += checkCToolStripMenuItem_Click;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("MS UI Gothic", 13.8F);
+            label6.Location = new Point(51, 76);
+            label6.Name = "label6";
+            label6.Size = new Size(98, 23);
+            label6.TabIndex = 7;
+            label6.Text = "AC電源：";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("MS UI Gothic", 13.8F);
+            label7.Location = new Point(51, 99);
+            label7.Name = "label7";
+            label7.Size = new Size(123, 23);
+            label7.TabIndex = 8;
+            label7.Text = "充電レベル：";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("MS UI Gothic", 13.8F);
+            label8.Location = new Point(51, 122);
+            label8.Name = "label8";
+            label8.Size = new Size(150, 23);
+            label8.TabIndex = 9;
+            label8.Text = "バッテリー残量：";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("MS UI Gothic", 13.8F);
+            label9.Location = new Point(51, 145);
+            label9.Name = "label9";
+            label9.Size = new Size(187, 23);
+            label9.TabIndex = 10;
+            label9.Text = "バッテリー残り時間：";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("MS UI Gothic", 13.8F);
+            label10.Location = new Point(51, 168);
+            label10.Name = "label10";
+            label10.Size = new Size(196, 23);
+            label10.TabIndex = 11;
+            label10.Text = "バッテリー駆動時間：";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(697, 290);
+            ClientSize = new Size(796, 238);
+            Controls.Add(label10);
+            Controls.Add(label9);
+            Controls.Add(label8);
+            Controls.Add(label7);
+            Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -146,7 +212,12 @@
         private Label label5;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem ファイルFToolStripMenuItem;
-        private ToolStripMenuItem 閉じるWToolStripMenuItem;
+        private ToolStripMenuItem closeWToolStripMenuItem;
         private ToolStripMenuItem checkCToolStripMenuItem;
+        private Label label6;
+        private Label label7;
+        private Label label8;
+        private Label label9;
+        private Label label10;
     }
 }

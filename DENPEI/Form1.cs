@@ -24,83 +24,100 @@ namespace DENPEI
             switch (pls)
             {
                 case PowerLineStatus.Offline:
-                    label1.Text = "AC電源がオフラインです";
+                    label1.Text = "オフラインです";
+                    label1.ForeColor = Color.Red;
                     break;
                 case PowerLineStatus.Online:
-                    label1.Text = "AC電源がオンラインです";
+                    label1.Text = "オンラインです";
+                    label1.ForeColor = Color.Green;
                     break;
                 case PowerLineStatus.Unknown:
-                    label1.Text = "AC電源の状態は不明です";
+                    label1.Text = "不明です";
+                    label1.ForeColor = Color.Gray;
                     break;
             }
 
             //バッテリーの充電状態を取得する
-            BatteryChargeStatus bcs =
-                SystemInformation.PowerStatus.BatteryChargeStatus;
-            if (bcs == BatteryChargeStatus.Unknown)
-            {
+            BatteryChargeStatus bcs = SystemInformation.PowerStatus.BatteryChargeStatus;
+            if (bcs == BatteryChargeStatus.Unknown) {
                 label2.Text = "不明です";
-            }
-            else
-            {
-                if ((bcs & BatteryChargeStatus.High) ==
-                    BatteryChargeStatus.High)
+            } else {
+                if ((bcs & BatteryChargeStatus.High) == BatteryChargeStatus.High)
                 {
-                    label2.Text = "充電レベルは、高い(66%より上)です";
+                    label2.Text = "高い（66%より上）です";
+                    label2.ForeColor = Color.Green;
                 }
-                if ((bcs & BatteryChargeStatus.Low) ==
-                    BatteryChargeStatus.Low)
+                if ((bcs & BatteryChargeStatus.Low) == BatteryChargeStatus.Low)
                 {
-                    label2.Text = "充電レベルは、低い(33%未満)です";
+                    label2.Text = "低い（33%未満）です";
+                    label2.ForeColor = Color.Yellow;
                 }
-                if ((bcs & BatteryChargeStatus.Critical) ==
-                    BatteryChargeStatus.Critical)
+                if ((bcs & BatteryChargeStatus.Critical) == BatteryChargeStatus.Critical)
                 {
-                    label2.Text = "充電レベルは、最低(5%未満)です";
+                    label2.Text = "最低（5%未満）です";
+                    label2.ForeColor = Color.Red;
                 }
-                if ((bcs & BatteryChargeStatus.Charging) ==
-                    BatteryChargeStatus.Charging)
+                if ((bcs & BatteryChargeStatus.Charging) == BatteryChargeStatus.Charging)
                 {
                     label2.Text = "充電中です";
+                    label2.ForeColor = Color.Green;
                 }
-                if ((bcs & BatteryChargeStatus.NoSystemBattery) ==
-                    BatteryChargeStatus.NoSystemBattery)
-                {
+                if ((bcs & BatteryChargeStatus.NoSystemBattery) == BatteryChargeStatus.NoSystemBattery) {
                     label2.Text = "バッテリーが存在しません";
+                    label2.ForeColor = Color.Gray;
                 }
             }
 
             //バッテリー残量（割合）
             float blp = SystemInformation.PowerStatus.BatteryLifePercent;
-            label3.Text = "バッテリー残量は、" + (blp * 100) + "%です";
+            float blpP = (blp * 100);
+            label3.Text = blpP + " %です";
+            if (66 < blpP) {
+                label2.ForeColor = Color.Green;
+            }
+            if (33 > blpP)
+            {
+                label2.ForeColor = Color.Yellow;
+            }
+            if (5 > blpP)
+            {
+                label2.ForeColor = Color.Red;
+            }
 
             //バッテリー残量（時間）
             int blr = SystemInformation.PowerStatus.BatteryLifeRemaining;
             if (-1 < blr)
             {
-                label4.Text = "バッテリー残り時間は、" + blr + "秒です";
+                label4.Text = blr + " 秒です";
             }
             else
             {
                 //AC電源がオンラインの時など
-                label4.Text = "バッテリー残り時間は、不明です";
+                label4.Text = "不明です";
+                label4.ForeColor = Color.Gray;
             }
 
             //バッテリーがフル充電された時の持ち時間（バッテリー駆動時間）
             int bfl = SystemInformation.PowerStatus.BatteryFullLifetime;
             if (-1 < bfl)
             {
-                label5.Text = "バッテリー駆動時間は、{" + bfl + "}秒です";
+                label5.Text = bfl + " 秒です";
             }
             else
             {
-                label5.Text = "バッテリー駆動時間は、不明です";
+                label5.Text = "不明です";
+                label5.ForeColor = Color.Gray;
             }
         }
 
         private void checkCToolStripMenuItem_Click(object sender, EventArgs e)
         {
             check();
+        }
+
+        private void closeWToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
