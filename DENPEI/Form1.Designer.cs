@@ -43,6 +43,7 @@
             label8 = new Label();
             label9 = new Label();
             label10 = new Label();
+            versionVToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -99,7 +100,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { ファイルFToolStripMenuItem, checkCToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { ファイルFToolStripMenuItem, checkCToolStripMenuItem, versionVToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(796, 28);
@@ -116,15 +117,15 @@
             // closeWToolStripMenuItem
             // 
             closeWToolStripMenuItem.Name = "closeWToolStripMenuItem";
-            closeWToolStripMenuItem.Size = new Size(224, 26);
+            closeWToolStripMenuItem.Size = new Size(153, 26);
             closeWToolStripMenuItem.Text = "閉じる(&W)";
             closeWToolStripMenuItem.Click += closeWToolStripMenuItem_Click;
             // 
             // checkCToolStripMenuItem
             // 
             checkCToolStripMenuItem.Name = "checkCToolStripMenuItem";
-            checkCToolStripMenuItem.Size = new Size(83, 24);
-            checkCToolStripMenuItem.Text = "チェック(&C)";
+            checkCToolStripMenuItem.Size = new Size(113, 24);
+            checkCToolStripMenuItem.Text = "手動チェック(&C)";
             checkCToolStripMenuItem.Click += checkCToolStripMenuItem_Click;
             // 
             // label6
@@ -177,6 +178,13 @@
             label10.TabIndex = 11;
             label10.Text = "バッテリー駆動時間：";
             // 
+            // versionVToolStripMenuItem
+            // 
+            versionVToolStripMenuItem.Name = "versionVToolStripMenuItem";
+            versionVToolStripMenuItem.Size = new Size(96, 24);
+            versionVToolStripMenuItem.Text = "バージョン(&V)";
+            versionVToolStripMenuItem.Click += versionVToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -219,5 +227,6 @@
         private Label label8;
         private Label label9;
         private Label label10;
+        private ToolStripMenuItem versionVToolStripMenuItem;
     }
 }

@@ -39,9 +39,12 @@ namespace DENPEI
 
             //バッテリーの充電状態を取得する
             BatteryChargeStatus bcs = SystemInformation.PowerStatus.BatteryChargeStatus;
-            if (bcs == BatteryChargeStatus.Unknown) {
+            if (bcs == BatteryChargeStatus.Unknown)
+            {
                 label2.Text = "不明です";
-            } else {
+            }
+            else
+            {
                 if ((bcs & BatteryChargeStatus.High) == BatteryChargeStatus.High)
                 {
                     label2.Text = "高い（66%より上）です";
@@ -62,7 +65,8 @@ namespace DENPEI
                     label2.Text = "充電中です";
                     label2.ForeColor = Color.Green;
                 }
-                if ((bcs & BatteryChargeStatus.NoSystemBattery) == BatteryChargeStatus.NoSystemBattery) {
+                if ((bcs & BatteryChargeStatus.NoSystemBattery) == BatteryChargeStatus.NoSystemBattery)
+                {
                     label2.Text = "バッテリーが存在しません";
                     label2.ForeColor = Color.Gray;
                 }
@@ -72,7 +76,8 @@ namespace DENPEI
             float blp = SystemInformation.PowerStatus.BatteryLifePercent;
             float blpP = (blp * 100);
             label3.Text = blpP + " %です";
-            if (66 < blpP) {
+            if (66 < blpP)
+            {
                 label2.ForeColor = Color.Green;
             }
             if (33 > blpP)
@@ -118,6 +123,12 @@ namespace DENPEI
         private void closeWToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void versionVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
         }
     }
 }
