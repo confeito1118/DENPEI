@@ -1,7 +1,11 @@
+using NAudio.Wave;
+
 namespace DENPEI
 {
     public partial class Form1 : Form
     {
+        private WaveOut waveOut = new WaveOut();
+
         public Form1()
         {
             InitializeComponent();
@@ -17,6 +21,14 @@ namespace DENPEI
             timer.Start();
         }
 
+        private void alarm()
+        {
+            // 再生設定
+            AudioFileReader reader = new AudioFileReader(@"C:\Users\yudu-\Downloads\test.mp3");
+            waveOut.Init(reader);
+            waveOut.Play();
+        }
+
         private void check()
         {
             //AC電源の状態
@@ -26,6 +38,7 @@ namespace DENPEI
                 case PowerLineStatus.Offline:
                     label1.Text = "オフラインです";
                     label1.ForeColor = Color.Red;
+                    alarm();
                     break;
                 case PowerLineStatus.Online:
                     label1.Text = "オンラインです";
