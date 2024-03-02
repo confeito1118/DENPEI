@@ -4,11 +4,41 @@ namespace DENPEI
 {
     public partial class Form1 : Form
     {
-        private WaveOut waveOut = new WaveOut();
-
         public Form1()
         {
             InitializeComponent();
+        }
+
+        static string cmdRun(string command)
+        {
+            //Processオブジェクトを作成
+            System.Diagnostics.Process p = new System.Diagnostics.Process();
+
+            //ComSpec(cmd.exe)のパスを取得して、FileNameプロパティに指定
+            p.StartInfo.FileName = System.Environment.GetEnvironmentVariable("ComSpec");
+            //出力を読み取れるようにする
+            p.StartInfo.UseShellExecute = false;
+            p.StartInfo.RedirectStandardOutput = true;
+            p.StartInfo.RedirectStandardInput = false;
+            //ウィンドウを表示しないようにする
+            p.StartInfo.CreateNoWindow = true;
+            //コマンドラインを指定（"/c"は実行後閉じるために必要）
+            p.StartInfo.Arguments = @"/c " + command;
+
+            //起動
+            p.Start();
+
+            //出力を読み取る
+            string results = p.StandardOutput.ReadToEnd();
+
+            //プロセス終了まで待機する
+            //WaitForExitはReadToEndの後である必要がある
+            //(親プロセス、子プロセスでブロック防止のため)
+            p.WaitForExit();
+            p.Close();
+
+            //出力された結果を表示
+            return results;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -24,13 +54,16 @@ namespace DENPEI
         private void alarm()
         {
             // 再生設定
-            AudioFileReader reader = new AudioFileReader(@"C:\Users\yudu-\Downloads\test.mp3");
+            AudioFileReader reader = new AudioFileReader(@"D:\jingle_12.mp3");
+            WaveOut waveOut = new WaveOut();
             waveOut.Init(reader);
             waveOut.Play();
+            // while (waveOut.PlaybackState == PlaybackState.Playing) ;
         }
 
         private void check()
         {
+            alarm();
             //AC電源の状態
             PowerLineStatus pls = SystemInformation.PowerStatus.PowerLineStatus;
             switch (pls)
@@ -38,7 +71,7 @@ namespace DENPEI
                 case PowerLineStatus.Offline:
                     label1.Text = "オフラインです";
                     label1.ForeColor = Color.Red;
-                    alarm();
+                    
                     break;
                 case PowerLineStatus.Online:
                     label1.Text = "オンラインです";
@@ -142,6 +175,11 @@ namespace DENPEI
         {
             Form2 form2 = new Form2();
             form2.Show();
+        }
+
+        private void reportRToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string result = cmdRun("powercfg /batteryreport /output hogehoge.html");
         }
     }
 }

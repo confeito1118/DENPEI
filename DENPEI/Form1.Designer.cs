@@ -38,12 +38,13 @@
             ファイルFToolStripMenuItem = new ToolStripMenuItem();
             closeWToolStripMenuItem = new ToolStripMenuItem();
             checkCToolStripMenuItem = new ToolStripMenuItem();
+            versionVToolStripMenuItem = new ToolStripMenuItem();
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
             label10 = new Label();
-            versionVToolStripMenuItem = new ToolStripMenuItem();
+            reportRToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -100,7 +101,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { ファイルFToolStripMenuItem, checkCToolStripMenuItem, versionVToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { ファイルFToolStripMenuItem, checkCToolStripMenuItem, reportRToolStripMenuItem, versionVToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(796, 28);
@@ -127,6 +128,13 @@
             checkCToolStripMenuItem.Size = new Size(113, 24);
             checkCToolStripMenuItem.Text = "手動チェック(&C)";
             checkCToolStripMenuItem.Click += checkCToolStripMenuItem_Click;
+            // 
+            // versionVToolStripMenuItem
+            // 
+            versionVToolStripMenuItem.Name = "versionVToolStripMenuItem";
+            versionVToolStripMenuItem.Size = new Size(96, 24);
+            versionVToolStripMenuItem.Text = "バージョン(&V)";
+            versionVToolStripMenuItem.Click += versionVToolStripMenuItem_Click;
             // 
             // label6
             // 
@@ -178,12 +186,12 @@
             label10.TabIndex = 11;
             label10.Text = "バッテリー駆動時間：";
             // 
-            // versionVToolStripMenuItem
+            // reportRToolStripMenuItem
             // 
-            versionVToolStripMenuItem.Name = "versionVToolStripMenuItem";
-            versionVToolStripMenuItem.Size = new Size(96, 24);
-            versionVToolStripMenuItem.Text = "バージョン(&V)";
-            versionVToolStripMenuItem.Click += versionVToolStripMenuItem_Click;
+            reportRToolStripMenuItem.Name = "reportRToolStripMenuItem";
+            reportRToolStripMenuItem.Size = new Size(116, 24);
+            reportRToolStripMenuItem.Text = "レポート出力(&R)";
+            reportRToolStripMenuItem.Click += reportRToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -228,5 +236,6 @@
         private Label label9;
         private Label label10;
         private ToolStripMenuItem versionVToolStripMenuItem;
+        private ToolStripMenuItem reportRToolStripMenuItem;
     }
 }
