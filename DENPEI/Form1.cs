@@ -1,3 +1,4 @@
+using NAudio.CoreAudioApi;
 using NAudio.Wave;
 
 namespace DENPEI
@@ -54,6 +55,9 @@ namespace DENPEI
 
         private void alarm()
         {
+            // 音量を80に調整する
+            SetVolume(80);
+
             // 再生設定
             AudioFileReader reader = new AudioFileReader(@"yellow.mp3");
             WaveOut waveOut = new WaveOut();
@@ -71,7 +75,7 @@ namespace DENPEI
                 case PowerLineStatus.Offline:
                     label1.Text = "オフラインです";
                     label1.ForeColor = Color.Red;
-                    
+
                     break;
                 case PowerLineStatus.Online:
                     label1.Text = "オンラインです";
@@ -172,6 +176,14 @@ namespace DENPEI
         {
             this.Close();
         }
+        public void SetVolume(int value)
+        {
+            // 音量を変更
+            MMDevice device;
+            MMDeviceEnumerator DevEnum = new MMDeviceEnumerator();
+            device = DevEnum.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia);
+            device.AudioEndpointVolume.MasterVolumeLevelScalar = ((float)value / 100.0f);
+        }
 
         private void versionVToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -181,7 +193,7 @@ namespace DENPEI
 
         private void reportRToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string result = cmdRun("powercfg /batteryreport /output hogehoge.html");
+            string result = cmdRun("powercfg /batteryreport /output report.html");
         }
     }
 }

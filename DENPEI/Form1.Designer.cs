@@ -38,63 +38,65 @@
             ファイルFToolStripMenuItem = new ToolStripMenuItem();
             closeWToolStripMenuItem = new ToolStripMenuItem();
             checkCToolStripMenuItem = new ToolStripMenuItem();
+            reportRToolStripMenuItem = new ToolStripMenuItem();
             versionVToolStripMenuItem = new ToolStripMenuItem();
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
             label10 = new Label();
-            reportRToolStripMenuItem = new ToolStripMenuItem();
+            label11 = new Label();
+            label12 = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("MS UI Gothic", 13.8F);
-            label1.Location = new Point(253, 76);
+            label1.Font = new Font("Meiryo UI", 13.8F);
+            label1.Location = new Point(267, 76);
             label1.Name = "label1";
-            label1.Size = new Size(200, 23);
+            label1.Size = new Size(203, 29);
             label1.TabIndex = 1;
             label1.Text = "しばらくお待ちください";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("MS UI Gothic", 13.8F);
-            label2.Location = new Point(253, 99);
+            label2.Font = new Font("Meiryo UI", 13.8F);
+            label2.Location = new Point(267, 105);
             label2.Name = "label2";
-            label2.Size = new Size(200, 23);
+            label2.Size = new Size(203, 29);
             label2.TabIndex = 2;
             label2.Text = "しばらくお待ちください";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("MS UI Gothic", 13.8F);
-            label3.Location = new Point(253, 122);
+            label3.Font = new Font("Meiryo UI", 13.8F);
+            label3.Location = new Point(267, 134);
             label3.Name = "label3";
-            label3.Size = new Size(200, 23);
+            label3.Size = new Size(203, 29);
             label3.TabIndex = 3;
             label3.Text = "しばらくお待ちください";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("MS UI Gothic", 13.8F);
-            label4.Location = new Point(253, 145);
+            label4.Font = new Font("Meiryo UI", 13.8F);
+            label4.Location = new Point(267, 163);
             label4.Name = "label4";
-            label4.Size = new Size(200, 23);
+            label4.Size = new Size(203, 29);
             label4.TabIndex = 4;
             label4.Text = "しばらくお待ちください";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("MS UI Gothic", 13.8F);
-            label5.Location = new Point(253, 168);
+            label5.Font = new Font("Meiryo UI", 13.8F);
+            label5.Location = new Point(267, 192);
             label5.Name = "label5";
-            label5.Size = new Size(200, 23);
+            label5.Size = new Size(203, 29);
             label5.TabIndex = 5;
             label5.Text = "しばらくお待ちください";
             // 
@@ -129,6 +131,13 @@
             checkCToolStripMenuItem.Text = "手動チェック(&C)";
             checkCToolStripMenuItem.Click += checkCToolStripMenuItem_Click;
             // 
+            // reportRToolStripMenuItem
+            // 
+            reportRToolStripMenuItem.Name = "reportRToolStripMenuItem";
+            reportRToolStripMenuItem.Size = new Size(116, 24);
+            reportRToolStripMenuItem.Text = "レポート出力(&R)";
+            reportRToolStripMenuItem.Click += reportRToolStripMenuItem_Click;
+            // 
             // versionVToolStripMenuItem
             // 
             versionVToolStripMenuItem.Name = "versionVToolStripMenuItem";
@@ -139,65 +148,79 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("MS UI Gothic", 13.8F);
+            label6.Font = new Font("Meiryo UI", 13.8F);
             label6.Location = new Point(51, 76);
             label6.Name = "label6";
-            label6.Size = new Size(98, 23);
+            label6.Size = new Size(113, 29);
             label6.TabIndex = 7;
             label6.Text = "AC電源：";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("MS UI Gothic", 13.8F);
-            label7.Location = new Point(51, 99);
+            label7.Font = new Font("Meiryo UI", 13.8F);
+            label7.Location = new Point(51, 105);
             label7.Name = "label7";
-            label7.Size = new Size(123, 23);
+            label7.Size = new Size(137, 29);
             label7.TabIndex = 8;
             label7.Text = "充電レベル：";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("MS UI Gothic", 13.8F);
-            label8.Location = new Point(51, 122);
+            label8.Font = new Font("Meiryo UI", 13.8F);
+            label8.Location = new Point(51, 134);
             label8.Name = "label8";
-            label8.Size = new Size(150, 23);
+            label8.Size = new Size(164, 29);
             label8.TabIndex = 9;
             label8.Text = "バッテリー残量：";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("MS UI Gothic", 13.8F);
-            label9.Location = new Point(51, 145);
+            label9.Font = new Font("Meiryo UI", 13.8F);
+            label9.Location = new Point(65, 235);
             label9.Name = "label9";
-            label9.Size = new Size(187, 23);
+            label9.Size = new Size(0, 29);
             label9.TabIndex = 10;
-            label9.Text = "バッテリー残り時間：";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("MS UI Gothic", 13.8F);
-            label10.Location = new Point(51, 168);
+            label10.Font = new Font("Meiryo UI", 13.8F);
+            label10.Location = new Point(51, 192);
             label10.Name = "label10";
-            label10.Size = new Size(196, 23);
+            label10.Size = new Size(210, 29);
             label10.TabIndex = 11;
             label10.Text = "バッテリー駆動時間：";
             // 
-            // reportRToolStripMenuItem
+            // label11
             // 
-            reportRToolStripMenuItem.Name = "reportRToolStripMenuItem";
-            reportRToolStripMenuItem.Size = new Size(116, 24);
-            reportRToolStripMenuItem.Text = "レポート出力(&R)";
-            reportRToolStripMenuItem.Click += reportRToolStripMenuItem_Click;
+            label11.AutoSize = true;
+            label11.Font = new Font("Meiryo UI", 13.8F);
+            label11.Location = new Point(51, 163);
+            label11.Name = "label11";
+            label11.Size = new Size(201, 29);
+            label11.TabIndex = 12;
+            label11.Text = "バッテリー残り時間：";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Meiryo UI", 13.8F);
+            label12.Location = new Point(51, 240);
+            label12.Name = "label12";
+            label12.Size = new Size(461, 87);
+            label12.TabIndex = 13;
+            label12.Text = "・ 1分間隔でチェックがはしります\r\n・ 33%以下になるとアラームでお知らせします\r\n・ アラームを鳴らすために音量が80%に上がります";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(796, 238);
+            ClientSize = new Size(796, 354);
+            Controls.Add(label12);
+            Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(label8);
@@ -237,5 +260,7 @@
         private Label label10;
         private ToolStripMenuItem versionVToolStripMenuItem;
         private ToolStripMenuItem reportRToolStripMenuItem;
+        private Label label11;
+        private Label label12;
     }
 }

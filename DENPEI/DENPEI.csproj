@@ -7,7 +7,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationIcon>energy.ico</ApplicationIcon>
-    <BaseOutputPath>C:\Users\cdx98\Documents\VB</BaseOutputPath>
+    <BaseOutputPath>C:\Users\yudu-\Downloads\aaa</BaseOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
