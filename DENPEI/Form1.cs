@@ -47,6 +47,7 @@ namespace DENPEI
             timer.Tick += new EventHandler(checkCToolStripMenuItem_Click);
             // 1秒インターバル
             // timer.Interval = 1000;
+            // 1分インターバル
             timer.Interval = 60000;
             timer.Start();
         }
@@ -54,7 +55,7 @@ namespace DENPEI
         private void alarm()
         {
             // 再生設定
-            AudioFileReader reader = new AudioFileReader(@"D:\jingle_12.mp3");
+            AudioFileReader reader = new AudioFileReader(@"yellow.mp3");
             WaveOut waveOut = new WaveOut();
             waveOut.Init(reader);
             waveOut.Play();
@@ -63,7 +64,6 @@ namespace DENPEI
 
         private void check()
         {
-            alarm();
             //AC電源の状態
             PowerLineStatus pls = SystemInformation.PowerStatus.PowerLineStatus;
             switch (pls)
@@ -100,11 +100,13 @@ namespace DENPEI
                 {
                     label2.Text = "低い（33%未満）です";
                     label2.ForeColor = Color.Yellow;
+                    alarm();
                 }
                 if ((bcs & BatteryChargeStatus.Critical) == BatteryChargeStatus.Critical)
                 {
                     label2.Text = "最低（5%未満）です";
                     label2.ForeColor = Color.Red;
+                    alarm();
                 }
                 if ((bcs & BatteryChargeStatus.Charging) == BatteryChargeStatus.Charging)
                 {
