@@ -35,11 +35,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(76, 62);
+            label1.Location = new Point(46, 61);
             label1.Name = "label1";
             label1.Size = new Size(133, 60);
             label1.TabIndex = 0;
-            label1.Text = "ソフト名：でんぺい\r\nバージョン：1.0.2\r\n作成者：松本 晋平";
+            label1.Text = "ソフト名：でんぺい\r\nバージョン：1.0.4\r\n作成者：松本 晋平";
             // 
             // Form2
             // 
