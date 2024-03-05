@@ -64,17 +64,18 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Meiryo UI", 13.8F);
-            label2.Location = new Point(267, 105);
+            label2.Location = new Point(700, 76);
             label2.Name = "label2";
             label2.Size = new Size(203, 29);
             label2.TabIndex = 2;
             label2.Text = "しばらくお待ちください";
+            label2.Visible = false;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Meiryo UI", 13.8F);
-            label3.Location = new Point(267, 134);
+            label3.Location = new Point(267, 105);
             label3.Name = "label3";
             label3.Size = new Size(203, 29);
             label3.TabIndex = 3;
@@ -84,21 +85,23 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Meiryo UI", 13.8F);
-            label4.Location = new Point(267, 163);
+            label4.Location = new Point(700, 105);
             label4.Name = "label4";
             label4.Size = new Size(203, 29);
             label4.TabIndex = 4;
             label4.Text = "しばらくお待ちください";
+            label4.Visible = false;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Meiryo UI", 13.8F);
-            label5.Location = new Point(267, 192);
+            label5.Location = new Point(700, 134);
             label5.Name = "label5";
             label5.Size = new Size(203, 29);
             label5.TabIndex = 5;
             label5.Text = "しばらくお待ちください";
+            label5.Visible = false;
             // 
             // menuStrip1
             // 
@@ -106,7 +109,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { ファイルFToolStripMenuItem, checkCToolStripMenuItem, reportRToolStripMenuItem, versionVToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(796, 28);
+            menuStrip1.Size = new Size(696, 28);
             menuStrip1.TabIndex = 6;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -159,17 +162,18 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Meiryo UI", 13.8F);
-            label7.Location = new Point(51, 105);
+            label7.Location = new Point(493, 76);
             label7.Name = "label7";
             label7.Size = new Size(137, 29);
             label7.TabIndex = 8;
             label7.Text = "充電レベル：";
+            label7.Visible = false;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Meiryo UI", 13.8F);
-            label8.Location = new Point(51, 134);
+            label8.Location = new Point(51, 105);
             label8.Name = "label8";
             label8.Size = new Size(164, 29);
             label8.TabIndex = 9;
@@ -188,37 +192,39 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Meiryo UI", 13.8F);
-            label10.Location = new Point(51, 192);
+            label10.Location = new Point(493, 134);
             label10.Name = "label10";
             label10.Size = new Size(210, 29);
             label10.TabIndex = 11;
             label10.Text = "バッテリー駆動時間：";
+            label10.Visible = false;
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Meiryo UI", 13.8F);
-            label11.Location = new Point(51, 163);
+            label11.Location = new Point(493, 105);
             label11.Name = "label11";
             label11.Size = new Size(201, 29);
             label11.TabIndex = 12;
             label11.Text = "バッテリー残り時間：";
+            label11.Visible = false;
             // 
             // label12
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Meiryo UI", 13.8F);
-            label12.Location = new Point(51, 240);
+            label12.Location = new Point(51, 183);
             label12.Name = "label12";
-            label12.Size = new Size(461, 87);
+            label12.Size = new Size(468, 87);
             label12.TabIndex = 13;
-            label12.Text = "・ 1分間隔でチェックがはしります\r\n・ 33%以下になるとアラームでお知らせします\r\n・ アラームを鳴らすために音量が80%に上がります";
+            label12.Text = "・ 5分間隔でチェックがはしります\r\n・ 50%以下になるとアラームでお知らせします\r\n・ アラームを鳴らすために音量が80%に調整します";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(796, 354);
+            ClientSize = new Size(696, 310);
             Controls.Add(label12);
             Controls.Add(label11);
             Controls.Add(label10);

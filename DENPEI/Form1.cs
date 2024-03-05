@@ -46,11 +46,14 @@ namespace DENPEI
         {
             System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
             timer.Tick += new EventHandler(checkCToolStripMenuItem_Click);
-            // 1秒インターバル
+            // 1 秒インターバル
             // timer.Interval = 1000;
-            // 1分インターバル
-            timer.Interval = 60000;
+            // 5 分インターバル
+            timer.Interval = 300000;
             timer.Start();
+
+            // チェック処理
+            check();
         }
 
         private void alarm()
@@ -75,7 +78,6 @@ namespace DENPEI
                 case PowerLineStatus.Offline:
                     label1.Text = "オフラインです";
                     label1.ForeColor = Color.Red;
-
                     break;
                 case PowerLineStatus.Online:
                     label1.Text = "オンラインです";
@@ -128,17 +130,13 @@ namespace DENPEI
             float blp = SystemInformation.PowerStatus.BatteryLifePercent;
             float blpP = (blp * 100);
             label3.Text = blpP + " %です";
-            if (66 < blpP)
+            if (50 < blpP)
             {
-                label2.ForeColor = Color.Green;
+                label3.ForeColor = Color.Green;
             }
-            if (33 > blpP)
+            if (50 >= blpP)
             {
-                label2.ForeColor = Color.Yellow;
-            }
-            if (5 > blpP)
-            {
-                label2.ForeColor = Color.Red;
+                label3.ForeColor = Color.Red;
             }
 
             //バッテリー残量（時間）
